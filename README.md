@@ -1,2 +1,8 @@
 # TCPRoxy
-tcp proxy to remote host
+test tcp proxy to remote host
+
+На одной из машин установлен и запущен Nginx, который выводит приветствие на порту 80. Копируем адрес машины и запускаем, на второй машине, собранный файл tcproxy.out с опциями: "ip адрес машины с nginx" и "её порт". На второй машине запускаем программу cURL, указывая loopback адрес и порт 8023, который используется программой tcproxy.out. Входящие запросы на порт 8023 перенаправляются на первую машину и ответ возращается программе cURL. Ответ от Nginx отображается в двух программах:
+![alt text](https://github.com/eaxr/TCPRoxy/blob/main/images/test1.gif?raw=true)
+
+Если несколько раз создать запрос, то запросы отображаются и их количество изменяется:
+![alt text](https://github.com/eaxr/TCPRoxy/blob/main/images/test2.gif?raw=true)
